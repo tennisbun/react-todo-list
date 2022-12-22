@@ -5,8 +5,18 @@ import Todo from './Todo.jsx'
 function Container({todos, setTodos}) {
   return (
     <div>
+      
+      { /* handle input and submission*/ }
       <Form setTodos={setTodos} todos={todos}/>
-      {todos} 
+      
+      { /* render todos */ }
+      {todos.map( (todo)=>{
+        return (
+          <Todo key={todo.id} todo={todo} 
+          todos={todos} setTodos={setTodos}/>) 
+      } ) 
+      }
+
     </div>
   )
 }

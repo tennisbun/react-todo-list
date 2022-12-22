@@ -12,21 +12,8 @@ function Form({todos, setTodos}) {
   let handleForm =(e)=> {
     e.preventDefault();
     console.log("handleForm");
-    updateTodos(e);
-    clearForm(e);
-  }
-
-  let updateTodos =(e)=> {
-    console.log("updatetodos");
-    setTodos([{todo: inputValue}]
-    //  [...todos, {todo: inputValue, id: Math.random(), completed: false}]
-    );
+    setTodos( [ ...todos, {text: inputValue, completed: false, id: Math.random()} ] );
     console.log(todos);
-
-  }
-
-  let clearForm =()=> {
-    console.log("clearForm");
   }
 
   return (

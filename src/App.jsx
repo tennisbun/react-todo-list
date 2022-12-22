@@ -6,11 +6,16 @@ import Todo from '../components/Todo.jsx'
 
 function App() {
   
+
   const [todos, setTodos,] = useState([])
 
   return (
+    
     <div className="text-3xl font-bold underline">
+    
+    { /* Main container */}
     <Container todos={todos} setTodos={setTodos} />
+    
     </div>
   )
 }
