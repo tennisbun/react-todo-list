@@ -1,9 +1,11 @@
 import React from 'react';
 import { FaMoon } from 'react-icons/fa';
+import { BsFillSunFill } from 'react-icons/bs';
 import {useContext, useState } from 'react';
 import {ThemeContext} from '../src/App.jsx'
 
 function Nav() {
+
   const theme = useContext(ThemeContext);
   const themeValue = theme.theme;
 
@@ -20,7 +22,7 @@ function Nav() {
         <p>React Todo List</p>
       </div>
       <div className="px-1 py-1 text-sm cursor-pointer text-xs">
-        <FaMoon onClick={changeTheme}/>
+        {themeValue ? <FaMoon onClick={changeTheme}/> : <BsFillSunFill onClick={changeTheme}/> }
       </div>
     </div>
   )

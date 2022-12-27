@@ -48,12 +48,21 @@ function Todo({todo, todos, setTodos, id}) {
 
   let editInputHandler=(e)=>{
     // prepares the todo input value
-    console.log(editValue);
+    let newLetter = e.target.value;
+    setEditValue(...editValue, newLetter);
   }
 
-  let handleEditSubmit=()=>{
+  let handleEditSubmit=(e)=>{
     // changes the previous text value of the todo object
-
+    e.preventDefault();
+    //setTodos(todos.map((item)=>{
+    //  if(item.id == todo.id){
+    //    return {
+    //      // new array with changed value
+    //    }
+    //  }
+    //}));
+    setEditing(!editing);
   }
 
   let optionsStyle = "flex py-2 w-20";
@@ -68,7 +77,7 @@ function Todo({todo, todos, setTodos, id}) {
   let editingInputStyleLight="bg-transparent outline-none text-black"
 
 
-  let EditingSection=()=>{
+  let EditingSection=({handleEditSubmit, editInputHandler})=>{
     return(
       <div className={todoStyle}>
         <form onSubmit={handleEditSubmit}>
@@ -93,7 +102,14 @@ function Todo({todo, todos, setTodos, id}) {
   return (
     <div className="flex">
 
-          {editing ? <EditingSection/> : <TodoSection/> }
+          { editing 
+            ?
+            <EditingSection 
+            handleEditSubmit={handleEditSubmit}
+            editInputHandler={editInputHandler}
+            />
+            : 
+          <TodoSection/> }
      
           
           <div className={optionsStyle}>
