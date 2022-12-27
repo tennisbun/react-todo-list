@@ -8,6 +8,8 @@ import { ThemeContext } from '../src/App.jsx';
 import {BsFillEraserFill } from 'react-icons/bs';
 import { AiFillCheckCircle } from 'react-icons/ai';
 
+// import filter related contexts 
+
 function Todo({todo, todos, setTodos, id}) {
   
   const theme = useContext(ThemeContext);
@@ -72,7 +74,8 @@ function Todo({todo, todos, setTodos, id}) {
 
   let iconContainerStyle = "bg-stone-900 text-lg rounded-sm h-6 w-6 flex content-center justify-center items-center ml-1 p-1 transition ease-in-out delay-150"
   let iconContainerStyleLight = "bg-stone-200 text-lg rounded-sm h-6 w-6 flex content-center justify-center items-center ml-1 p-1 transition ease-in-out delay-150"
-
+  
+  // need to add more width to this style
   let editingInputStyle="bg-transparent outline-none"
   let editingInputStyleLight="bg-transparent outline-none text-black"
 
