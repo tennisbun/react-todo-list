@@ -8,6 +8,8 @@ import { ThemeContext } from '../src/App.jsx';
 import {BsFillEraserFill } from 'react-icons/bs';
 import { AiFillCheckCircle } from 'react-icons/ai';
 
+// import filter related contexts 
+
 function Todo({todo, todos, setTodos, id}) {
   
   const theme = useContext(ThemeContext);
