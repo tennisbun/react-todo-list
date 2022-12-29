@@ -2,21 +2,23 @@ import React from 'react'
 
 function EditInput({editValue, editing, setEditValue, setEditing, todoStyle, themeValue, todos, setTodos, todo}) {
 
-  let editingInputStyle="bg-transparent outline-none"
+  let editingInputStyle="bg-transparent outline-none w-80"
   let editingInputStyleLight="bg-transparent outline-none text-black"
 
   let editInputHandler=(e)=>{setEditValue(e.target.value);}
 
   let handleEditSubmit=(e)=>{
       e.preventDefault();
-      setTodos(todos.map((item)=>{
-        if(item.id == todo.id){
-          return {...todos, text: editValue};
-          console.log(todos);
+      console.log("handleEditSubmit function on submit running...");
+
+      const newState = todos.map(obj => {
+        if (obj.id === todo.id) {
+          return {...obj, text: editValue };
         }
-      }));
-      console.log("Handled Edit");
-      console.log(editValue);
+        return obj;
+      });
+
+      setTodos(newState);
       setEditing(!editing);
   }    
 

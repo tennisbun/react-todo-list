@@ -5,9 +5,7 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 
-const schema = yup.object().shape({
-  todo: yup.string().required(),
-});
+const schema = yup.object().shape({todo: yup.string().required()});
 
 function Form({todos, setTodos}) {
    
@@ -37,9 +35,7 @@ function Form({todos, setTodos}) {
     }
   };
 
-  let handleInputState =(e)=> {
-    setInputValue(e.target.value);
-  }
+  let handleInputState =(e)=> {setInputValue(e.target.value);};
 
   let handleForm =(e)=> {
     e.preventDefault();
@@ -48,7 +44,7 @@ function Form({todos, setTodos}) {
     inputRef.current.reset();
   }
    
-    let inputStyle=" outline-none rounded-sm px-1 mb-1 w-full h-6 pb-2 mr-2 border-b border-stone-600 bg-transparent text-white transition ease-in-out delay-150";
+  let inputStyle=" outline-none rounded-sm px-1 mb-1 w-full h-6 pb-2 mr-2 border-b border-stone-600 bg-transparent text-white transition ease-in-out delay-150";
   let inputStyleLight=" outline-none rounded-sm px-1 mb-1 w-full h-6 pb-2 mr-2 border-b border-stone-600 bg-transparent text-black transition ease-in-out delay-150";
 
   let addButtonStyle="text-white w-14 rounded-sm px-1 rad text-sm border-b border-stone-600 hover:bg-stone-900 transition ease-in-out delay-150 p-1" ;
@@ -58,9 +54,7 @@ function Form({todos, setTodos}) {
   let filterOptionsStyleLight="flex text-black text-xs mb-8 mt-2 transition ease-in-out delay-150 pl-1 cursor-pointer"
   let filterOptionSelected="cursor-pointer text-stone-600"
 
-  const {register, handleSubmit, errors} = useForm({
-    resolver: yupResolver(schema),
-  });
+  const {register, handleSubmit, errors} = useForm({resolver: yupResolver(schema)});
 
   return (
     <div>

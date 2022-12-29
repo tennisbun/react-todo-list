@@ -30,11 +30,11 @@ function App() {
       <AnimatedCursor color='000,000,000'/> 
     )
   }
-
+         //{theme ? <Cursor/> : <CursorLight/>}
   return (
     <div className={theme ? darkBg : lightBg}>
           
-          {theme ? <Cursor/> : <CursorLight/>}
+ 
           <FilterContext.Provider value={{filterStatus: filterStatus, setFilterStatus: setFilterStatus}}>
             <ThemeContext.Provider value={{theme: theme, setTheme: setTheme}}>
               <Nav/> 

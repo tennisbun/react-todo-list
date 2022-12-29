@@ -36,23 +36,24 @@ function Todo({todo, todos, setTodos, id}) {
   let deleteTodo=()=>{setTodos(todos.filter((el)=>el.id !== todo.id));};
   let editTodo=()=>{setEditing(!editing);};
 
-  let optionsStyle = "flex py-2 w-20";
-  let iconStyle= "cursor-pointer mr-1 text-stone-200 transition ease-in-out delay-150 ";
-  let iconStyleLight = "cursor-pointer mr-1 text-stone-800s transition ease-in-out delay-150";
+  let optionsStyle   =  "flex py-1 h-30 w-30";
+  let iconStyle      =  "cursor-pointer mr-1 text-stone-200 transition ease-in-out delay-150 pl-1";
+  let iconStyleLight =  "cursor-pointer mr-1 text-stone-800 transition ease-in-out delay-150 pl-1";
 
-  let iconContainerStyle = "bg-stone-900 text-lg rounded-sm h-6 w-6 flex content-center justify-center items-center ml-1 p-1 transition ease-in-out delay-150"
-  let iconContainerStyleLight = "bg-stone-200 text-lg rounded-sm h-6 w-6 flex content-center justify-center items-center ml-1 p-1 transition ease-in-out delay-150"
+  let iconContainerStyle      =  "bg-stone-900 rounded-sm h-6 w-6 flex content-center justify-center items-center ml-1 p-1 transition ease-in-out delay-150";
+  let iconContainerStyleLight =  "bg-stone-200 rounded-sm h-6 w-6 flex content-center justify-center items-center ml-1 p-1 transition ease-in-out delay-150";
 
   return (
+
     <div className="flex">
           
           { 
             editing ?
-            <EditInput editValue={editValue} editing={editing} themeValue={themeValue}
-            setEditValue={setEditValue} setEditing={setEditing} todoStyle={todoStyle}
-            todos={todos} setTodos={setTodos} todo={todo}/>
+              <EditInput editValue={editValue} editing={editing} themeValue={themeValue}
+              setEditValue={setEditValue} setEditing={setEditing} todoStyle={todoStyle}
+              todos={todos} setTodos={setTodos} todo={todo}/>
             : 
-            <TodoSection todoText={todo.text} themeValue={themeValue} todoStyle={todoStyle}/> 
+              <TodoSection todoText={todo.text} themeValue={themeValue} todoStyle={todoStyle}/> 
           }
           
           <div className={optionsStyle}>
@@ -70,7 +71,9 @@ function Todo({todo, todos, setTodos, id}) {
          </div>
         
     </div>
+
   )
+
 }
 
 export default Todo
