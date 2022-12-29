@@ -48,7 +48,7 @@ function Form({todos, setTodos}) {
     inputRef.current.reset();
   }
    
-  let inputStyle=" outline-none rounded-sm px-1 mb-1 w-full h-6 pb-2 mr-2 border-b border-stone-600 bg-transparent text-white transition ease-in-out delay-150";
+    let inputStyle=" outline-none rounded-sm px-1 mb-1 w-full h-6 pb-2 mr-2 border-b border-stone-600 bg-transparent text-white transition ease-in-out delay-150";
   let inputStyleLight=" outline-none rounded-sm px-1 mb-1 w-full h-6 pb-2 mr-2 border-b border-stone-600 bg-transparent text-black transition ease-in-out delay-150";
 
   let addButtonStyle="text-white w-14 rounded-sm px-1 rad text-sm border-b border-stone-600 hover:bg-stone-900 transition ease-in-out delay-150 p-1" ;
