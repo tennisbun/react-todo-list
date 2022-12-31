@@ -4,6 +4,7 @@ import { ThemeContext } from '../src/App.jsx'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import { motion, AnimatePresence } from "framer-motion"
 
 const schema = yup.object().shape({todo: yup.string().required()});
 
@@ -35,7 +36,7 @@ function Form({todos, setTodos}) {
     }
   };
 
-  let handleInputState =(e)=> {setInputValue(e.target.value);};
+  let handleInputState =(e)=> {   setInputValue(e.target.value);};
 
   let handleForm =(e)=> {
     e.preventDefault();
@@ -57,7 +58,11 @@ function Form({todos, setTodos}) {
   const {register, handleSubmit, errors} = useForm({resolver: yupResolver(schema)});
 
   return (
-    <div>
+    <motion.div
+        initial={{ y:-300, opacity: 0 }}
+        animate={{ y:0, opacity: 1 }}
+        exit={{ opacity: 0 }}
+    >
     
      <form ref={inputRef} onSubmit={handleForm} className="w-full" >
          <input placeholder="What needs to be done?"  
@@ -73,7 +78,7 @@ function Form({todos, setTodos}) {
        <span className={completed.style} onClick={()=>changeFilter(2)} >Completed</span>
      </div>
 
-    </div>
+    </motion.div>
   )
 }
 

@@ -1,6 +1,8 @@
-import React from 'react'
+import {React, useState} from 'react'
 
 function EditInput({editValue, editing, setEditValue, setEditing, todoStyle, themeValue, todos, setTodos, todo}) {
+
+ const [inputState, setInputState] = useState(todo.text);
 
   let editingInputStyle="bg-transparent outline-none w-80"
   let editingInputStyleLight="bg-transparent outline-none text-black"
@@ -12,7 +14,7 @@ function EditInput({editValue, editing, setEditValue, setEditing, todoStyle, the
       console.log("handleEditSubmit function on submit running...");
 
       const newState = todos.map(obj => {
-        if (obj.id === todo.id) {
+        if (obj.id === todo?.id) {
           return {...obj, text: editValue };
         }
         return obj;
@@ -20,12 +22,16 @@ function EditInput({editValue, editing, setEditValue, setEditing, todoStyle, the
 
       setTodos(newState);
       setEditing(!editing);
-  }    
+  } 
+
+  let handleFocusOut=()=>{
+    setEditing(false); 
+  };
 
   return(
-      <div className={todoStyle}>
+      <div className={todoStyle} onBlur={handleFocusOut}>
         <form onSubmit={handleEditSubmit}>
-          <input autoFocus  
+          <input autoFocus placeholder={todo?.text}
             className={themeValue ? editingInputStyle : editingInputStyleLight} 
             onChange={editInputHandler}>
           </input>

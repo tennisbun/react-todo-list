@@ -14,10 +14,10 @@ function App() {
   const [filterStatus, setFilterStatus] = useState("View All");
   const [filteredTodos, setFilteredTodos] = useState([]);
 
-  const containerWrapperStyle = "flex flex-col justify-center align-center items-center"
+  const containerWrapperStyle = "flex justify-center";
   
-  let lightBg = "bg-stone-300 h-screen transition ease-in-out delay-150";
-  let darkBg = "bg-stone-800 h-screen transition ease-in-out delay-150";
+  let lightBg = "bg-stone-300 transition ease-in-out delay-150 p-50 h-max";
+  let darkBg = "bg-stone-800 transition ease-in-out delay-150 p-50 h-screen";
   
   let Cursor =()=>{
     return(
@@ -32,7 +32,7 @@ function App() {
   }
          //{theme ? <Cursor/> : <CursorLight/>}
   return (
-    <div className={theme ? darkBg : lightBg}>
+    <div className={theme ? darkBg : lightBg} id='App'>
           
  
           <FilterContext.Provider value={{filterStatus: filterStatus, setFilterStatus: setFilterStatus}}>
@@ -40,7 +40,8 @@ function App() {
               <Nav/> 
               { /* Main container */}
               <div className={containerWrapperStyle}>
-                <Container todos={todos} setTodos={setTodos} />
+                <Container todos={todos} setTodos={setTodos} 
+                  filterStatus={filterStatus} setFilterStatus={setFilterStatus} />
               </div>
             </ThemeContext.Provider>
           </FilterContext.Provider>
