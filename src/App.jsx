@@ -16,7 +16,7 @@ function App() {
 
   const containerWrapperStyle = "flex justify-center";
   
-  let lightBg = "bg-stone-300 transition ease-in-out delay-150 p-50 h-max";
+  let lightBg = "bg-stone-300 transition ease-in-out delay-150 p-50 h-screen";
   let darkBg = "bg-stone-800 transition ease-in-out delay-150 p-50 h-screen";
   
   let Cursor =()=>{

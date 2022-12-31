@@ -29,7 +29,7 @@ function Container({todos, setTodos, filterStatus}) {
   
     return (
     
-      <div className="justify-center flex-col w-96 mb-56 ">
+      <div className="justify-center flex-col w-96 mb-56 h-screen ">
       
         <Form setTodos={setTodos} todos={todos}/>
 
