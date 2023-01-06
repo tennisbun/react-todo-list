@@ -4,6 +4,7 @@ import Container from '../components/Container.jsx'
 import Todo from '../components/Todo.jsx'
 import Nav from '../components/Nav.jsx'
 import AnimatedCursor from 'react-animated-cursor'
+
 export const ThemeContext = createContext(null);
 export const FilterContext = createContext(null);
 
@@ -19,22 +20,13 @@ function App() {
   let lightBg = "bg-stone-300 transition ease-in-out delay-150 p-50 h-screen";
   let darkBg = "bg-stone-800 transition ease-in-out delay-150 p-50 h-screen";
   
-  let Cursor =()=>{
-    return(
-      <AnimatedCursor color='200,200,200'/> 
-    )
-  }
-    
-  let CursorLight =()=>{
-    return(
-      <AnimatedCursor color='000,000,000'/> 
-    )
-  }
-         //{theme ? <Cursor/> : <CursorLight/>}
+  let Cursor =()=>{return(<AnimatedCursor color='200,200,200'/> )}
+  let CursorLight =()=>{return(<AnimatedCursor color='000,000,000'/> )}
+  //{theme ? <Cursor/> : <CursorLight/>}
+  
   return (
     <div className={theme ? darkBg : lightBg} id='App'>
-          
- 
+
           <FilterContext.Provider value={{filterStatus: filterStatus, setFilterStatus: setFilterStatus}}>
             <ThemeContext.Provider value={{theme: theme, setTheme: setTheme}}>
               <Nav/> 

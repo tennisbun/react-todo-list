@@ -25,13 +25,13 @@ function Todo({todo, todos, setTodos, id}) {
 
   useEffect(() => {
       if(themeValue && completed){
-        setTodoStyle("w-70 h-6 text-green-400 bg-transparent w-80 my-1 mr-2 px-2 pb-1 rounded-sm border-b border-green-600 transition ease-in-out delay-150 line-through overflow-hidden pb-4 text-sm");
+        setTodoStyle("w-70 h-6 text-green-700 bg-transparent w-80 my-1 mr-2 px-2 pb-1 rounded-sm border-b border-green-600 transition ease-in-out delay-50 line-through overflow-hidden pb-4 text-sm");
       } else if(themeValue && !completed){
-        setTodoStyle("w-70 h-6 text-white bg-transparent w-80 my-1 mr-2 px-2 pb-1 rounded-sm border-b border-stone-700 transition ease-in-out delay-150 overflow-hidden pb-4 text-sm overflow-hidden");
+        setTodoStyle("w-70 h-6 text-white bg-transparent w-80 my-1 mr-2 px-2 pb-1 rounded-sm border-b border-stone-700 transition ease-in-out delay-50 overflow-hidden pb-4 text-sm overflow-hidden");
       } else if (!themeValue && completed){
-        setTodoStyle("w-70 h-6 text-black bg-transparent w-80 my-1 mr-2 px-2 pb-1 rounded-sm border-b border-green-600 transition ease-in-out delay-150 line-through overflow-hidden text-sm");
+        setTodoStyle("w-70 h-6 text-green-700 bg-transparent w-80 my-1 mr-2 px-2 pb-1 rounded-sm border-b border-green-600 transition ease-in-out delay-50 line-through overflow-hidden text-sm");
       } else if(!themeValue && !completed){
-        setTodoStyle("w-70 h-6 text-black bg-transparent w-80 my-1 mr-2 px-2 pb-1 rounded-sm border-b border-stone-700 transition ease-in-out delay-150  pb-4 text-sm overflorw-hidden");
+        setTodoStyle("w-70 h-6 text-black bg-transparent w-80 my-1 mr-2 px-2 pb-1 rounded-sm border-b border-stone-700 transition ease-in-out delay-50  pb-4 text-sm overflorw-hidden");
       };
   }, [themeValue, completed]);
 
@@ -86,8 +86,3 @@ function Todo({todo, todos, setTodos, id}) {
 }
 
 export default Todo
-
-
-
-
-

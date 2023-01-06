@@ -33,7 +33,7 @@ function Container({todos, setTodos, filterStatus}) {
       
         <Form setTodos={setTodos} todos={todos}/>
 
-        <div className="h-72 overflow-scroll">
+        <div className="h-80 overflow-scroll">
         { 
           //View All
           todos.map((todo)=>{
